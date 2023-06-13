@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:animate_do/animate_do.dart';
 import 'package:user_app/const/colors.dart';
+import 'package:user_app/services/api_service.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -10,6 +10,23 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final TextEditingController  usernameController = TextEditingController();
+  final TextEditingController  emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  Future<void> signup() async {
+    final isSignedUp = await signUp(
+      usernameController.text,
+      emailController.text,
+      passwordController.text
+    );
+    if (isSignedUp) {
+           Navigator.pushNamed(context, '/mainpage');
+    }else {
+      print("Sign Up unsuccessful");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,9 +86,10 @@ class _SignUpPageState extends State<SignUpPage> {
                       ],
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(left: 15, right: 15, top: 0, bottom: 0),
-                    child: TextField(
+                    child: TextFormField(
+                      // validator:,
                       decoration:
                           InputDecoration(hintText: "Enter your username"),
                     ),
@@ -157,11 +175,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       Container(
                         width: 150,
                         child: ElevatedButton(
-                          onPressed: () =>
-                              Navigator.pushNamed(context, '/mainpage'),
+                          onPressed: signup,
                           child: Text('Sign Up'),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor,
+                              foregroundColor: backColor,
                               side: BorderSide(
                                 width: 1,
                                 color: primaryColor,
