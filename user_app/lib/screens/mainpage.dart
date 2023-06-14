@@ -94,7 +94,7 @@ class _MainPageState extends State<MainPage> {
               print(snapshot.error.toString());
               return Text('error');
             }
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           },
         ),
       ),
