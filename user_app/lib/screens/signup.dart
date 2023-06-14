@@ -41,7 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
           Expanded(
             flex: 3,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
                       "https://img.indiafilings.com/learn/wp-content/uploads/2015/07/12011038/starting-a-business-in-India-for-foreign-company-1024x683.jpg"),
@@ -73,7 +73,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 35,
                       ),
                       Padding(
@@ -100,20 +100,20 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsets.only(left: 15, right: 15, top: 0, bottom: 0),
+                            const EdgeInsets.only(left: 15, right: 15, top: 0, bottom: 0),
                         child: TextFormField(
                           validator: RequiredValidator(errorText: "* required"),
                           controller: usernameController,
                           decoration:
-                              InputDecoration(hintText: "Enter your username"),
+                              const InputDecoration(hintText: "Enter your username"),
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
                         _getErrorText(),
                         style: TextStyle(color: Colors.red),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Padding(
@@ -151,12 +151,12 @@ class _SignUpPageState extends State<SignUpPage> {
                               InputDecoration(hintText: "Enter your Email address"),
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
                         _getErrorText(),
                         style: TextStyle(color: Colors.red),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Padding(
@@ -182,7 +182,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 15, right: 15, top: 0, bottom: 15),
                         child: TextFormField(
                           obscureText: true,
@@ -191,15 +191,15 @@ class _SignUpPageState extends State<SignUpPage> {
                             MinLengthValidator(6,errorText: "Password should be atleast 6 characters")]), 
                           controller: passwordController,
                           decoration:
-                              InputDecoration(hintText: "Enter your password (atleast 8 characters)"),
+                              const InputDecoration(hintText: "Enter your password (atleast 8 characters)"),
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
                         _getErrorText(),
                         style: TextStyle(color: Colors.red),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Row(
@@ -212,7 +212,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               child: Text('Sign In'),
                               style: OutlinedButton.styleFrom(
                                 foregroundColor: primaryColor,
-                                side: BorderSide(
+                                side: const BorderSide(
                                   width: 1,
                                   color: primaryColor,
                                   style: BorderStyle.solid,
@@ -233,7 +233,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: primaryColor,
                                   foregroundColor: backColor,
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                     width: 1,
                                     color: primaryColor,
                                   )),
