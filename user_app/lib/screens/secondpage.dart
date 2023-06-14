@@ -30,8 +30,8 @@ class _SecondPageState extends State<SecondPage> {
               return GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 2.0,
-                    crossAxisSpacing: 2.0,
+                    mainAxisSpacing: 10.0,
+                    crossAxisSpacing: 10.0,
                     childAspectRatio: 1.0,
                   ),
                   itemCount: users.length,
