@@ -101,7 +101,7 @@ class _SecondPageState extends State<SecondPage> {
               print(snapshot.error.toString());
               return Text('error');
             }
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           },
         ),
       ),
